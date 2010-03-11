@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project relativePaths="false" version="4">
   <component name="ChangeListManager">
-    <list default="true" readonly="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README" afterPath="$PROJECT_DIR$/README" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" readonly="true" name="Default" comment="" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="insight.iws" />
   </component>
@@ -65,7 +62,7 @@
       <file leaf-file-name="README" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="36" selection-start="667" selection-end="667" vertical-scroll-proportion="0.5230312">
+            <state line="1" column="78" selection-start="8" selection-end="8" vertical-scroll-proportion="0.023774145">
               <folding />
             </state>
           </provider>
@@ -339,7 +336,7 @@
     <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
     <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Include details of Insight's microformat." />
+    <option name="LAST_COMMIT_MESSAGE" value="Insight's microformat now included details for integration points and monitored events." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
@@ -353,6 +350,7 @@
     <MESSAGE value="Decribing what Insight does." />
     <MESSAGE value="Update the description of Insight." />
     <MESSAGE value="Include details of Insight's microformat." />
+    <MESSAGE value="Insight's microformat now included details for integration points and monitored events." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -368,7 +366,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/README">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="36" selection-start="667" selection-end="667" vertical-scroll-proportion="0.5230312">
+        <state line="1" column="78" selection-start="8" selection-end="8" vertical-scroll-proportion="0.023774145">
           <folding />
         </state>
       </provider>

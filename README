@@ -3,7 +3,7 @@ Insight
 Provides a tool that collates information from multiple deployed web application nodes into a single
 html based view.
 
-Insight relies on web applications exposing their configuration properties as a resource representation based
+Insight relies on web applications exposing their configuration properties as a resource with the representation based
 on the following microformat:
 
 <dl class="property">
