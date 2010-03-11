@@ -11,3 +11,17 @@ on the following microformat:
     <dd class="value">{property.value}</dd>
 </dl>
 
+<dl class="monitoredEvent">
+    <dt class="name">{event.name}</dt>
+    <dd class="description">{event.description}</dd>
+    <dd class="value">{event.value}</dd>
+</dl>
+
+<dl>
+    <dt class="integrationPoint">{integration.point.name}</dt>
+    <dt class="available">true|false</dt>
+</dl>
+
+
+
+
