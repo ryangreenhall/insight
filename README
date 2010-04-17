@@ -1,9 +1,9 @@
 Insight
 
-Provides a tool that collates information from multiple deployed web application nodes into a single
-html based view.
+Provides a dashboard that collates information from multiple deployed web application nodes into a single
+view.
 
-Insight relies on web applications exposing their configuration properties as a resource with the representation based
+Insight relies on web applications exposing their configuration properties as a resource with a representation based
 on the following microformat:
 
 <dl class="property">
@@ -17,10 +17,6 @@ on the following microformat:
     <dd class="value">{event.value}</dd>
 </dl>
 
-<dl>
-    <dt class="integrationPoint">{integration.point.name}</dt>
-    <dt class="available">true|false</dt>
-</dl>
 
 
 
