@@ -1,0 +1,24 @@
+Evented I/O for V8 javascript.
+
+To build:
+
+  ./configure
+  make 
+  make install
+
+To run the tests:
+  
+  make test
+
+To build the documentation and install it, you will need ronn:
+
+  make doc install
+ 
+To read the documentation:
+
+  man doc/node.1
+
+See http://nodejs.org/ for more information. For help and discussion
+subscribe to the mailing list by visiting
+http://groups.google.com/group/nodejs or by sending an email to
+nodejs+subscribe@googlegroups.com.
