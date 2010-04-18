@@ -1,6 +1,10 @@
 {
     environments: [
         {
+                name:"Staging",
+                urls: ["a", "b"]
+        },
+        {
                 name:"Prod",
                 urls: ["a", "b"]
         },
