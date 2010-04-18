@@ -1,4 +1,6 @@
 Insight
+=============
+
 
 Provides a dashboard that collates information from multiple deployed web application nodes into a single
 view.
