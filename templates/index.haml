@@ -4,3 +4,11 @@
     %title&= title
   %body
     = contents
+
+    .info
+      Insight will collate information from apps in the following environments
+
+      %ul.environments
+        :each environment in config
+          %li= environment.name
+

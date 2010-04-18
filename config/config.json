@@ -1,0 +1,12 @@
+{
+    environments: [
+        {
+                name:"Prod",
+                urls: ["a", "b"]
+        },
+        {
+                name:"Showcase",
+                urls: ["c", "d"]
+        }
+    ]
+}

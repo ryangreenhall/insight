@@ -8,19 +8,19 @@ var insight = {};
 
 insight.server = function() {
     var that = {};
+    var config = insight.config().load();
 
     var renderWelcomePageTo = function(response) {
-        File.readFile('../../templates/index.haml', "UTF-8", function (err, haml) {
+        File.readFile('templates/index.haml', "UTF-8", function (err, haml) {
             var data = {
                 title: "Insight",
-                contents: "<h1>Welcome to Insight</h1>"
+                contents: "<h1>Welcome to Insight</h1>",
+                config: config
             };
-            page = Haml.render(haml, {locals: data});
+            var page = Haml.render(haml, {locals: data});
             response.end(page);
         });
     };
-
-    var config = insight.config().load();
 
     var server = http.createServer(function (req, res) {
 
@@ -41,11 +41,9 @@ insight.config = function() {
     var config;
 
     that.load = function() {
-        File.readFile('../config/config.json', function(err, data){
+        config = eval(File.readFileSync('config/config.json'));
 
-            //sys.puts(err);
-            config = eval(data);
-        });
+        sys.puts("Name of first environment: " + config[0].name);
         return config;
     };
 
