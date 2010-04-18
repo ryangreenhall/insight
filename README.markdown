@@ -1,11 +1,13 @@
-Insight
-=======
+#Insight
 
 Provides a dashboard that collates information from multiple deployed web application nodes into a single
-view.
+view.  Insight relies on web applications exposing their configuration properties as a resource, which provides the
+information as JSON.
 
-Insight relies on web applications exposing their configuration properties as a resource providing a JSON respresentation
-as defined:
+## JSON format
+
+Insight supports three types of property:
+
 
     {
             [
@@ -20,12 +22,11 @@ as defined:
     }
 
 
-Example
--------
+##Example
 
 A request to http://mywebapp:8080/internal/status.json
 
-could responds with:
+could respond with a collection of properties:
 
     {
             [
@@ -49,8 +50,7 @@ could responds with:
             ]
     }
 
-Configuration
--------------
+##Configuration
 
 
 
