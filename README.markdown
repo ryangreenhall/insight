@@ -6,23 +6,24 @@ status information as JSON.
 
 ## JSON format
 
-Insight supports three types of property:
+Insight supports three types of properties:
 
 *   Property - a simple configuration property;
 *   Integration Point - a property that configures an external dependency;
 *   Event - values that correspond to events that are of interest, e.g number of errors in the last hour.
 
-    {
-            [
-                {
-                    name:name,
-                    value:value,
-                    type:integration-point|property|event,
-                    healthy:true|false (optional)
-                 },
-                 ...
-            ]
-    }
+
+        {
+                [
+                    {
+                        name:name,
+                        value:value,
+                        type:integration-point|property|event,
+                        healthy:true|false (optional)
+                     },
+                     ...
+                ]
+        }
 
 
 ##Example
