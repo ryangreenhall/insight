@@ -1,7 +1,8 @@
 var sys = require('sys'),
         http = require('http'),
-        Haml = require('../lib/haml'),
-        File = require('fs');
+        File = require('fs'),
+        Haml = require('../lib/haml');
+
 
 var insight = {};
 
@@ -19,7 +20,10 @@ insight.server = function() {
         });
     };
 
+    var config = insight.config().load();
+
     var server = http.createServer(function (req, res) {
+
         res.writeHead(200, {'Content-Type': 'text/html'});
         renderWelcomePageTo(res);
     });
@@ -27,6 +31,22 @@ insight.server = function() {
     that.start = function() {
         server.listen(8000);
         sys.puts('Server running at http://localhost:8000/');
+    };   
+
+    return that;
+};
+
+insight.config = function() {
+    var that = {};
+    var config;
+
+    that.load = function() {
+        File.readFile('../config/config.json', function(err, data){
+
+            //sys.puts(err);
+            config = eval(data);
+        });
+        return config;
     };
 
     return that;
