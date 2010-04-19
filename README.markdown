@@ -21,8 +21,8 @@ could respond with a collection of properties:
     {
         "properties": {
             "username" : {
-                "value":"user",
-                "type" :property
+                "value": "user",
+                "type" : "property"
             },
 
             "end.point": {
