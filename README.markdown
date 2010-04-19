@@ -12,46 +12,30 @@ Insight supports three types of properties:
 *   Integration Point - a property that configures an external dependency;
 *   Event - values that correspond to events that are of interest, e.g number of errors in the last hour.
 
-
-        {
-                [
-                    {
-                        name:name,
-                        value:value,
-                        type:integration-point|property|event,
-                        healthy:true|false (optional)
-                     },
-                     ...
-                ]
-        }
-
-
-##Example
+###Example
 
 A request to http://mywebapp:8080/internal/status.json
 
 could respond with a collection of properties:
 
     {
-            [
-                {
-                    name:username,
-                    value:user,
-                    type:property,
-                },
-                {
-                    name:end.point
-                    value:http://end.point.i.need.to.talk.to
-                    type:integration
-                    healthy:true
-                },
-                {
-                    name:number.of.requests
-                    value:1678,
-                    type:event
-                }
+        "properties": {
+            "username" : {
+                "value":"user",
+                "type" :property
+            },
 
-            ]
+            "end.point": {
+                "value":"user",
+                "type" : "http://end.point.i.need.to.talk.to"
+                "type" : "integration"
+            },
+
+            "number.of.requests.in.last.hour": {
+                "value": "1678",
+                "type" : "event"
+            }
+        }
     }
 
 ##Configuration
@@ -75,7 +59,10 @@ Insight is configured as follows:
 
 ## Getting Started
 
-  
+    1. clone git@github.com:ryangreenhall/insight.git
+    2. config the app in config/config.json
+    3. sh run
+    4. Insight will be running on http://localhost:8000
 
 
 
