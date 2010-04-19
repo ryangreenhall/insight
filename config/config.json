@@ -1,16 +1,13 @@
 {
-    environments: [
-        {
-                name:"Staging",
-                urls: ["a", "b"]
+    "environments": {
+        "Staging": {
+            "urls":["a", "b"]
         },
-        {
-                name:"Prod",
-                urls: ["a", "b"]
+        "Showcase": {
+            "urls":["c", "d"]
         },
-        {
-                name:"Showcase",
-                urls: ["c", "d"]
+        "Prod": {
+            "urls":["e", "f"]
         }
-    ]
+    }
 }

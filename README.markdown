@@ -59,22 +59,23 @@ could respond with a collection of properties:
 Insight is configured as follows:
 
     {
-        environments: [
-            {
-                    name:"Staging",
-                    urls: ["http://staging.one", "http://staging.two"]
+        "environments": {
+            "Staging": {
+                "urls":["a", "b"]
             },
-            {
-                    name:"Prod",
-                    urls: ["http://prod.one", "http://prod.two"]
+            "Showcase": {
+                "urls":["c", "d"]
             },
-            {
-                    name:"Showcase",
-                    urls: ["http://showcase.one", "http://showcase.two"]
+            "Prod": {
+                "urls":["e", "f"]
             }
-        ]
+        }
     }
 
+
+## Getting Started
+
+  
 
 
 

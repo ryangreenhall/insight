@@ -8,7 +8,9 @@
     .info
       Insight will collate information from apps in the following environments
 
-      %ul.environments
-        :each environment in config
-          %li= environment.name
+      :each item in config
+          %ul
+            :each name, value in item
+              %li&=  name
+
 

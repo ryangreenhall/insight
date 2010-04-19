@@ -1,7 +1,8 @@
 var sys = require('sys'),
         http = require('http'),
         File = require('fs'),
-        Haml = require('../lib/haml');
+        Haml = require('../lib/haml'),
+        underscore = require("../lib/underscore");
 
 
 var insight = {};
@@ -41,9 +42,7 @@ insight.config = function() {
     var config;
 
     that.load = function() {
-        config = eval(File.readFileSync('config/config.json'));
-
-        sys.puts("Name of first environment: " + config[0].name);
+        config = JSON.parse(File.readFileSync('config/config.json'));
         return config;
     };
 
