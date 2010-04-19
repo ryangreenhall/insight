@@ -26,8 +26,7 @@ could respond with a collection of properties:
             },
 
             "end.point": {
-                "value":"user",
-                "type" : "http://end.point.i.need.to.talk.to"
+                "value" : "http://end.point.i.need.to.talk.to",
                 "type" : "integration"
             },
 
