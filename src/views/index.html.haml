@@ -1,0 +1,14 @@
+!!!
+%html
+  %title= title
+  %body
+  %h1 Welcome to Insight!
+  .info
+    Insight will collate information from apps in the following environment.
+  - each item in config
+    %ul
+      -each name, value in item
+        %li=  value
+
+
+    
