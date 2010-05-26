@@ -4,6 +4,7 @@ var sys = require('sys'),
         http = require('http'),
         File = require('fs'),
         Url = require('url'),
+        Events = require('events'),
         underscore = require("../lib/underscore");
 
 
@@ -13,6 +14,26 @@ kiwi.require('express');
 configure(function() {
     set('root', __dirname);
 });
+
+
+function EventBroker() {
+    Events.EventEmitter.call(this);
+}
+sys.inherits(EventBroker, Events.EventEmitter);
+
+var eventBroker = new EventBroker();
+
+eventBroker.addListener("status-retrieval-complete", function(environment, states, request){
+    return request.render('dashboard.html.haml', {
+        layout: false,
+        locals: {
+            title: environment + ' Dashboard',
+            environment: environment,
+            states: states
+        }
+    });
+});
+
 
 insight.resource = function(url) {
     var that = {};
@@ -25,6 +46,7 @@ insight.resource = function(url) {
             response.setEncoding('utf8');
             response.addListener('data', function (chunk) {
                 callback(chunk);
+
             });
         });
         request.end();
@@ -48,22 +70,17 @@ get('/status/:environment', function(environment) {
     var env = config.environments[environment];
 
     var states = [];
+    var that = this;
     env.urls.forEach(function(url) {
         insight.resource(url).get(function(data) {
             sys.puts("This is the data I have: " + data);
             states.push(JSON.parse(data));
+            sys.puts(states.length);
+
+            if (states.length === env.urls.length) {
+                eventBroker.emit("status-retrieval-complete", environment, states, that);
+            }
         });
-    });
-
-    //sys.puts(states.length);
-
-    return this.render('dashboard.html.haml', {
-       layout: false,
-       locals: {
-           title: environment + ' Dashboard',
-           environment: environment,
-           states: states
-       }
     });
 });
 
