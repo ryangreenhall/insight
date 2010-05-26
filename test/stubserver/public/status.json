@@ -1,0 +1,16 @@
+{
+    "username" : {
+        "value": "user",
+        "type" : "property"
+    },
+
+    "end.point": {
+        "value": "http://end.point.i.need.to.talk.to",
+        "type" : "integration"
+    },
+
+    "number.of.requests.in.last.hour": {
+        "value": "1678",
+        "type" : "event"
+    }
+}
