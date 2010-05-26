@@ -1,11 +1,11 @@
-var sys = require('sys'),
-        http = require('http'),
-        File = require('fs'),
-        Url = require('url'),
-        underscore = require("../lib/underscore");
-
-
 var insight = {};
+
+var sys = require('sys'),
+http = require('http'),
+File = require('fs'),
+Url = require('url'),
+underscore = require("../lib/underscore");
+
 
 var kiwi = require('kiwi');
 kiwi.require('express');
@@ -13,6 +13,14 @@ kiwi.require('express');
 configure(function() {
   set('root', __dirname);
 });
+
+insight.resource = function(url) {
+    var that = {};
+    that.get = function() {
+        sys.puts("GET: " + url);
+    };
+    return that;
+};
 
 get('/', function(){
   return this.render('index.html.haml', {
@@ -30,13 +38,10 @@ get('/status/:environment', function(environment) {
     var env = config.environments[environment];
 
     var requestStatus = function(url) {
+        insight.resource(url).get(); 
 
         var url = Url.parse(url, false);
-        sys.puts("Host:" + url.hostname);
-        sys.puts("Port:" + url.port);
-        sys.puts("Path:" + url.pathname);
-
-
+      
         var google = http.createClient(url.port, url.hostname);
         var request = google.request('GET', url.pathname,
           {'host': url.hostname});
@@ -45,20 +50,22 @@ get('/status/:environment', function(environment) {
         request.addListener('response', function (response) {
           response.setEncoding('utf8');
           response.addListener('data', function (chunk) {
-            statusAsJson = chunk;
-//            sys.puts('BODY: ' + chunk);
+            statusAsJson.status = chunk;
+            sys.puts('BODY: ' + chunk);
+            sys.puts('More body' + statusAsJson.status);
           });
         });
         request.end();
-        return statusAsJson;
+        return statusAsJson.status;
     };
 
 
     _.each(env.urls, function(url){
 
         // request the url and parse the JSON.
-        sys.puts(url);
-        requestStatus(url);
+        var statusAsJson = requestStatus(url);
+        sys.puts(statusAsJson);
+
     });
     
     
