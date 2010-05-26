@@ -47,15 +47,24 @@ get('/status/:environment', function(environment) {
     var config = insight.config().load();
     var env = config.environments[environment];
 
-    var status = [];
+    var states = [];
     env.urls.forEach(function(url) {
         insight.resource(url).get(function(data) {
             sys.puts("This is the data I have: " + data);
+            states.push(JSON.parse(data));
         });
     });
 
-    // write the contents.
-    return "status of " + environment;
+    //sys.puts(states.length);
+
+    return this.render('dashboard.html.haml', {
+       layout: false,
+       locals: {
+           title: environment + ' Dashboard',
+           environment: environment,
+           states: states
+       }
+    });
 });
 
 insight.config = function() {

@@ -1,0 +1,10 @@
+!!!
+%html
+  %title= title
+  %body
+  %h1= environment
+  -each item in states
+    %ul
+      -each name, value in item
+        %li=  value
+
