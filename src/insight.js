@@ -1,8 +1,9 @@
 var sys = require('sys'),
         http = require('http'),
         File = require('fs'),
+        Url = require('url'),
         underscore = require("../lib/underscore");
-        
+
 
 var insight = {};
 
@@ -28,10 +29,36 @@ get('/status/:environment', function(environment) {
     var config = insight.config().load();
     var env = config.environments[environment];
 
+    var requestStatus = function(url) {
+
+        var url = Url.parse(url, false);
+        sys.puts("Host:" + url.hostname);
+        sys.puts("Port:" + url.port);
+        sys.puts("Path:" + url.pathname);
+
+
+        var google = http.createClient(url.port, url.hostname);
+        var request = google.request('GET', url.pathname,
+          {'host': url.hostname});
+
+        var statusAsJson = {};
+        request.addListener('response', function (response) {
+          response.setEncoding('utf8');
+          response.addListener('data', function (chunk) {
+            statusAsJson = chunk;
+//            sys.puts('BODY: ' + chunk);
+          });
+        });
+        request.end();
+        return statusAsJson;
+    };
+
+
     _.each(env.urls, function(url){
 
         // request the url and parse the JSON.
         sys.puts(url);
+        requestStatus(url);
     });
     
     
