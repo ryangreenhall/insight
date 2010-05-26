@@ -7,7 +7,9 @@
             "urls":["c", "d"]
         },
         "Prod": {
-            "urls":["e", "f"]
+            "urls":["http://localhost:8080/public/status.json",
+                    "http://localhost:8081/public/status.json",
+                    "http://localhost:8082/public/status.json"]
         }
     }
 }
