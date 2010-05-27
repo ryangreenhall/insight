@@ -10,8 +10,11 @@ var sys = require('sys'),
 
 var kiwi = require('kiwi');
 kiwi.require('express');
+require('express/plugins');
+
 
 configure(function() {
+    use(Static);
     set('root', __dirname);
 });
 
@@ -85,7 +88,6 @@ get('/*.css', function(file){
   var toRead = __dirname + '/' + file + '.css';
   return File.readFileSync(toRead);
 });
-
 
 insight.config = function() {
     var that = {};
