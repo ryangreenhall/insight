@@ -3,11 +3,14 @@
   %title= title
   %body
   %h1= environment
-  -each status in states
-    %ul
-      -each property, value in status
-        %li= value
-        %li= status[value].value
+  %table
+    %tr
+      -each property, value in states[0]
+        %th= value
+    -each status in states
+      %tr
+        -each property, value in status
+          %td= status[value].value  
 
 
 
