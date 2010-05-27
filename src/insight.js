@@ -73,10 +73,7 @@ get('/status/:environment', function(environment) {
     var that = this;
     env.urls.forEach(function(url) {
         insight.resource(url).get(function(data) {
-            sys.puts("This is the data I have: " + data);
             states.push(JSON.parse(data));
-            sys.puts(states.length);
-
             if (states.length === env.urls.length) {
                 eventBroker.emit("status-retrieval-complete", environment, states, that);
             }
