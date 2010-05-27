@@ -1,1 +1,1 @@
-./tools/node-v0.1.91/node src/server.js
+node src/insight.js
