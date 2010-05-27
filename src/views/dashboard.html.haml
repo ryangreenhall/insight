@@ -1,18 +1,12 @@
-!!!
-%html
-  %head
-    %title= title
-    %link{ rel: 'stylesheet', href: '/css/insight.css' }
-  %body
-  %h1= environment
-  %table
+%h1= environment
+%table
+  %tr
+    -each property, value in states[0]
+      %th= value
+  -each status in states
     %tr
-      -each property, value in states[0]
-        %th= value
-    -each status in states
-      %tr
-        -each property, value in status
-          %td= status[value].value  
+      -each property, value in status
+        %td= status[value].value  
 
 
 

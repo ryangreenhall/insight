@@ -28,7 +28,6 @@ var eventBroker = new EventBroker();
 
 eventBroker.addListener("status-retrieval-complete", function(environment, states, request){
     return request.render('dashboard.html.haml', {
-        layout: false,
         locals: {
             title: environment + ' Dashboard',
             environment: environment,
@@ -59,7 +58,6 @@ insight.resource = function(url) {
 
 get('/', function() {
     return this.render('index.html.haml', {
-        layout: false,
         locals: {
             title: 'Insight',
             config: insight.config().load()

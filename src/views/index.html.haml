@@ -1,18 +1,12 @@
-!!!
-%html
-  %head
-    %title= title
-    %link{ rel: 'stylesheet', href: '/css/insight.css' }
-  %body
-  %h1 Welcome to Insight!
-  .info
-    Insight will collate information from apps in the following environment.
-  - each item in config
-    %ul
-      -each name, value in item
-        %li
-          %a{ href: '/status/' + value}=value
-  %img{src:'public/images/with-love-from-node-js-pos-128.png'}
+%h1 Welcome to Insight!
+.info
+  Insight will collate information from apps in the following environment.
+- each item in config
+  %ul
+    -each name, value in item
+      %li
+        %a{ href: '/status/' + value}=value
+
 
 
 
