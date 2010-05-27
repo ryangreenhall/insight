@@ -6,7 +6,7 @@
   -each status in states
     %tr
       -each property, value in status
-        %td= status[value].value  
+        %td= status[value].value || status[value] 
 
 
 
