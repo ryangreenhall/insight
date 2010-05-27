@@ -81,6 +81,12 @@ get('/status/:environment', function(environment) {
     });
 });
 
+get('/*.css', function(file){
+  var toRead = __dirname + '/' + file + '.css';
+  return File.readFileSync(toRead);
+});
+
+
 insight.config = function() {
     var that = {};
     var config;
