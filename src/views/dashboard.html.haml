@@ -1,3 +1,8 @@
+%ul.navigation
+  - each item in config
+    -each name, value in item
+      %li
+        %a{ href: '/status/' + value}=value
 %h1= environment
 %table
   %tr

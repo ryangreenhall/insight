@@ -26,12 +26,14 @@ sys.inherits(EventBroker, Events.EventEmitter);
 
 var eventBroker = new EventBroker();
 
-eventBroker.addListener("status-retrieval-complete", function(environment, states, request){
+eventBroker.addListener("status-retrieval-complete", function(environment, states, request, config){
     return request.render('dashboard.html.haml', {
         locals: {
             title: environment + ' Dashboard',
             environment: environment,
-            states: states
+            states: states,
+            config: config
+
         }
     });
 });
@@ -78,7 +80,7 @@ get('/status/:environment', function(environment) {
             status.server = url;
             states.push(status);
             if (states.length === env.urls.length) {
-                eventBroker.emit("status-retrieval-complete", environment, states, that);
+                eventBroker.emit("status-retrieval-complete", environment, states, that, config);
             }
         });
     });
