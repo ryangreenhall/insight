@@ -11,7 +11,7 @@
   -each status in states
     %tr
       -if (status.isUnavailable)
-        %td.deadServer Server is unavailable
+        %td.deadServer{colspan:10}= 'Server is unavailable: ' +  status.server
       -if (!status.isUnavailable)
         -each property, value in status
           %td= status[value].value || status[value] 
