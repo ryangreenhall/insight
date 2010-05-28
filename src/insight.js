@@ -76,6 +76,9 @@ get('/status/:environment', function(environment) {
             if (states.length === env.urls.length) {
                 eventBroker.emit("status-retrieval-complete", environment, states, that, config, propertyNames);
             }
+        }, function() {
+            var status = {isUnavailable:true};
+            states.push(status);
         });
     });
 });
