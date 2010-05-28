@@ -1,14 +1,13 @@
 var insight = {};
 
 var sys = require('sys'),
-        http = require('http'),
-        File = require('fs'),
-        Url = require('url'),
-        Events = require('events'),
-        underscore = require("../lib/underscore");
+    http = require('http'),
+    File = require('fs'),
+    Url = require('url'),
+    Events = require('events'),
+    underscore = require("../lib/underscore"),
+    kiwi = require('kiwi');
 
-
-var kiwi = require('kiwi');
 kiwi.require('express');
 require('express/plugins');
 
@@ -115,6 +114,5 @@ insight.config = function() {
 
     return that;
 };
-
 
 run();
