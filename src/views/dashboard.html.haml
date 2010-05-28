@@ -6,8 +6,8 @@
 %h1= environment
 %table
   %tr
-    -each property, value in states[0]
-      %th= value
+    -each propertyName in propertyNames
+      %th= propertyName
   -each status in states
     %tr
       -each property, value in status
