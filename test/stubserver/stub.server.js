@@ -14,6 +14,7 @@ get('/*.json', function(file) {
   return fs.readFileSync(toRead);
 });
 
-run(8080);
-run(8081);
-run(8082);
+var ports = [8080, 8081, 8082];
+ports.each(function(port){
+    run(port);
+});
