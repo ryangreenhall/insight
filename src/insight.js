@@ -1,4 +1,4 @@
-var insight = {};
+require.paths.unshift('src');
 
 var sys = require('sys'),
     http = require('http'),
@@ -6,7 +6,10 @@ var sys = require('sys'),
     Url = require('url'),
     Events = require('events'),
     underscore = require("../lib/underscore"),
-    kiwi = require('kiwi');
+    kiwi = require('kiwi'),
+    insight = require('namespace'),
+    config = require('config');
+
 
 kiwi.require('express');
 require('express/plugins');
@@ -102,17 +105,5 @@ get('/status/:environment', function(environment) {
         });
     });
 });
-
-insight.config = function() {
-    var that = {};
-    var config;
-
-    that.load = function() {
-        config = JSON.parse(File.readFileSync('config/config.json'));
-        return config;
-    };
-
-    return that;
-};
 
 run();
