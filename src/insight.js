@@ -6,7 +6,9 @@ var sys = require('sys'),
     kiwi = require('kiwi'),
     insight = require('namespace'),
     config = require('config'),
-    resource = require('resource');
+    resource = require('resource'),
+    statusAggregator = require('app.status.aggregator');
+
 
 kiwi.require('express');
 require('express/plugins');
@@ -46,41 +48,8 @@ get('/', function() {
 });
 
 get('/status/:environment', function(environment) {
-
     var config = insight.config().load();
-    var env = config.environments[environment];
-
-    var states = [];
-    var that = this;
-    env.urls.forEach(function(url) {
-
-        var propertyNamesFrom = function(healthyServerState) {
-            var propertyNames = [];
-            for (property in healthyServerState) {
-                propertyNames.push(property);
-            }
-            return propertyNames;
-        };
-
-        insight.resource(url).get(function(data) {
-            var status = JSON.parse(data);
-            status.server = url;
-            states.push(status);
-
-            var healthyServerStates = states.filter(function(status){
-                return !status.isUnavailable;
-            });
-
-            var propertyNames = propertyNamesFrom(healthyServerStates[0]);
-
-            if (states.length === env.urls.length) {
-                eventBroker.emit("status-retrieval-complete", environment, states, that, config, propertyNames);
-            }
-        }, function() {
-            var status = {isUnavailable:true};
-            states.push(status);
-        });
-    });
+    insight.appStatusAggregator(config, eventBroker, this).aggregate(environment);
 });
 
 run();
