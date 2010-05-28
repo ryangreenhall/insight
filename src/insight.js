@@ -91,17 +91,11 @@ get('/status/:environment', function(environment) {
             status.server = url;
             states.push(status);
 
-
             var healthyServerStates = states.filter(function(status){
                 return !status.isUnavailable;
             });
 
             var propertyNames = propertyNamesFrom(healthyServerStates[0]);
-//            propertyNames.forEach(function(propertyName){
-//                sys.puts(propertyName);
-//            });
-
-            sys.puts("Healthy servers: " + healthyServerStates.length);
 
             if (states.length === env.urls.length) {
                 eventBroker.emit("status-retrieval-complete", environment, states, that, config, propertyNames);

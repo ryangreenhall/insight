@@ -83,5 +83,11 @@ ul.navigation li a:hover span {
     color: #8895b8;
 }
 
+.deadServer {
+    color: red;
+    font-weight: bold;
+    border: 2px solid red;
+}
+
   
 

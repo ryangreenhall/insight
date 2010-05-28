@@ -1,4 +1,9 @@
 {
+    "svn.revision" : {
+        "value": "897",
+        "type" : "property"
+    },
+
     "username" : {
         "value": "user",
         "type" : "property"
@@ -11,6 +16,11 @@
 
     "number.of.requests.in.last.hour": {
         "value": "1678",
+        "type" : "event"
+    },
+
+    "number.of.errors.in.last.hour": {
+        "value": "7",
         "type" : "event"
     }
 }
