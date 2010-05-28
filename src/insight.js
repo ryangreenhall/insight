@@ -8,10 +8,8 @@ var sys = require('sys'),
     config = require('config'),
     resource = require('resource');
 
-
 kiwi.require('express');
 require('express/plugins');
-
 
 configure(function() {
     use(Static);
