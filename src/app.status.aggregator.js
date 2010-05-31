@@ -28,7 +28,8 @@ insight.appStatusAggregator = function(config, eventBroker, request){
         var env = config.environments[environment];
         var states = [];
         env.urls.forEach(function(url) {
-            insight.resource(url).get(function(data) {
+
+            var statusRetrievedSuccessfully = function(data) {
                 var status = JSON.parse(data);
                 status.server = url;
                 states.push(status);
@@ -36,13 +37,17 @@ insight.appStatusAggregator = function(config, eventBroker, request){
                 if (allServerStatesHaveBeenRetrieved()) {
                     eventBroker.emit("status-retrieval-complete", environment, states, request, config, propertyNames());
                 }
-            }, function() {
+            };
+
+            var errorRetrievingStatus = function() {
                 var status = {
                     isUnavailable:true,
                     server:url
                 };
                 states.push(status);
-            });
+            };
+
+            insight.resource(url).get(statusRetrievedSuccessfully, errorRetrievingStatus);
         });
 
     };
