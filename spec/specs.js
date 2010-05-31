@@ -14,5 +14,5 @@ specs =[
 
 run(specs);
 
-JSpec.run({ reporter: JSpec.reporters.Terminal, failuresOnly: true }).report()
+JSpec.run({ reporter: JSpec.reporters.Terminal, failuresOnly: true }).report();
 
