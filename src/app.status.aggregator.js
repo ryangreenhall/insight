@@ -18,6 +18,13 @@ insight.appStatusAggregator = function(config, eventBroker, request){
             return states.length === env.urls.length;
         };
 
+        var propertyNames = function() {
+            var healthyServerStates = states.filter(function(status){
+                return !status.isUnavailable;
+            });
+            return propertyNamesFrom(healthyServerStates[0]);
+        };
+
         var env = config.environments[environment];
         var states = [];
         env.urls.forEach(function(url) {
@@ -26,14 +33,8 @@ insight.appStatusAggregator = function(config, eventBroker, request){
                 status.server = url;
                 states.push(status);
 
-                var healthyServerStates = states.filter(function(status){
-                    return !status.isUnavailable;
-                });
-
-                var propertyNames = propertyNamesFrom(healthyServerStates[0]);
-
                 if (allServerStatesHaveBeenRetrieved()) {
-                    eventBroker.emit("status-retrieval-complete", environment, states, request, config, propertyNames);
+                    eventBroker.emit("status-retrieval-complete", environment, states, request, config, propertyNames());
                 }
             }, function() {
                 var status = {
