@@ -19,21 +19,19 @@ A request to http://mywebapp:8080/internal/status.json
 could respond with a collection of properties:
 
     {
-        "properties": {
-            "username" : {
-                "value": "user",
-                "type" : "property"
-            },
+        "username" : {
+            "value": "user",
+            "type" : "property"
+        },
 
-            "end.point": {
-                "value" : "http://end.point.i.need.to.talk.to",
-                "type" : "integration"
-            },
+        "end.point": {
+            "value" : "http://end.point.i.need.to.talk.to",
+            "type" : "integration"
+        },
 
-            "number.of.requests.in.last.hour": {
-                "value": "1678",
-                "type" : "event"
-            }
+        "number.of.requests.in.last.hour": {
+            "value": "1678",
+            "type" : "event"
         }
     }
 
@@ -61,7 +59,7 @@ Insight is configured as follows:
     1. clone git@github.com:ryangreenhall/insight.git
     2. config the app in config/config.json
     3. sh run
-    4. Insight will be running on http://localhost:8000
+    4. Insight will be running on http://localhost:3000
 
 
 
