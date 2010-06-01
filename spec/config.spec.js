@@ -1,6 +1,5 @@
-describe 'Config'
-
-    it "can be loaded from file"
-        "foo".should.eql "foo"
-    end
-end
+describe('config', function(){
+  it('should pass', function(){
+    expect(1+2).toEqual(3);
+  });
+});
