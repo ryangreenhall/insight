@@ -43,10 +43,6 @@ ul.navigation li {
     padding-bottom: 10px;
 }
 
-ul.navigation li.externalLink {
-    border-top: 4px solid #F52887;
-}
-
 ul.navigation li.current {
     border-top: 4px solid #8fb417;
 }
@@ -62,11 +58,6 @@ ul.navigation li a {
     color: black;
 }
 
-ul.navigation li a:hover {
-    color: #8895b8;
-    border: none;
-}
-
 ul.navigation li span {
     display: none;
     position: absolute;
@@ -75,12 +66,6 @@ ul.navigation li span {
     width: 160px;
     font: normal 9px Verdana, Georgia, "Times New Roman", Times, serif;
     line-height: 15px;
-}
-
-ul.navigation li a:hover span {
-    margin-top: 7px;
-    display: block;
-    color: #8895b8;
 }
 
 .deadServer {
