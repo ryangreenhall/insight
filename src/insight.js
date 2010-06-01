@@ -3,15 +3,15 @@ require.paths.unshift('src');
 var sys = require('sys'),
     Events = require('events'),
     underscore = require("../lib/underscore"),
-    kiwi = require('kiwi'),
+    //kiwi = require('kiwi'),
     insight = require('namespace'),
     config = require('config'),
     resource = require('resource'),
     statusAggregator = require('app.status.aggregator');
 
 
-kiwi.require('express');
-require('express/plugins');
+require('../lib/express');
+require('../lib/express/plugins');
 
 configure(function() {
     use(Static);
