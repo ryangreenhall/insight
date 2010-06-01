@@ -1,4 +1,4 @@
-require.paths.unshift('spec', 'lib');
+require.paths.unshift('spec', 'lib', 'src');
 var jasmine = require('jasmine');
 var sys = require('sys');
 
