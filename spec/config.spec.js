@@ -4,9 +4,9 @@ sys = require('sys');
 
 require('config');
 
-describe('config', function(){
+describe('config', function() {
 
-    it('can be loaded from file', function(){
+    it('contains correct prod urls', function(){
         var config = insight.config().load();
         expect(config.environments.Prod.urls).toEqual(
                 ['http://localhost:8080/public/status.json',
