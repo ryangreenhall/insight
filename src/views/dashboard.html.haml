@@ -7,7 +7,7 @@
 %table
   %tr
     -each propertyName in propertyNames
-      %th= propertyName
+      %th.propertyName= propertyName
   -each status in states
     %tr
       -if (status.isUnavailable)
