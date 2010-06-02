@@ -1,3 +1,15 @@
+require 'rubygems'
+gem 'rspec'
+gem 'rake'
+
+require "rake"
+require "spec/rake/spectask"
+
 task :specs do
   sh "node spec/run.specs.js"
+end
+
+desc "runs the acceptance scenarios"
+Spec::Rake::SpecTask.new('scenarios') do |t|
+    t.spec_files = FileList['./scenarios/*scenario.rb']
 end
