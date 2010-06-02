@@ -1,2 +1,2 @@
-node test/stubserver/stub.server.js
+node test/stubserver/stub.server.js &
 node src/insight.js
