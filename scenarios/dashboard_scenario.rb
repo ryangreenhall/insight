@@ -13,11 +13,11 @@ describe "Dashboard" do
         dashboard.heading.should eql "Prod"
     end
 
-    xit "should provide property names as headings" do
+    it "should provide a warning indicating that a server is dead" do
         home = navigate_to_home
         dashboard = home.navigate_to_dashboard "Prod"
         
-        dashboard.property_headings.should eql []
+        dashboard.server_is_dead?.should eql true
     end
 
     def navigate_to_home

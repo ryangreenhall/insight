@@ -14,4 +14,9 @@ class DashBoardPage
        puts th_elements
        return th_elements 
     end
+
+    def server_is_dead?
+        dead_server = @browser.td(:class, "deadServer")
+        return dead_server != nil
+    end
 end
