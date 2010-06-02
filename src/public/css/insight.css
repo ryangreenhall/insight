@@ -35,7 +35,7 @@ ul.navigation {
 }
 
 ul.navigation li {
-    float: left;
+    float: left;                             
     border-top: 4px solid #efefef;
     margin-right: 15px;
     padding-right: 20px;
@@ -56,6 +56,10 @@ ul.navigation li a {
     text-decoration: none;
     font: bold 12px Verdana, Georgia, "Times New Roman", Times, serif;
     color: black;
+}
+
+a {
+    color:#8fb417;
 }
 
 ul.navigation li span {
