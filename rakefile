@@ -5,6 +5,8 @@ gem 'rake'
 require "rake"
 require "spec/rake/spectask"
 
+task :default => [:specs, 'scenarios']
+
 task :specs do
   sh "node spec/run.specs.js"
 end
