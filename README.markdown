@@ -56,9 +56,9 @@ Insight is configured as follows:
 
 ## Getting Started
 
-    1. clone git@github.com:ryangreenhall/insight.git
+    1. git clone git@github.com:ryangreenhall/insight.git
     2. config the app in config/config.json
-    3. sh run
+    3. sh insight
     4. Insight will be running on http://localhost:3000
 
 
