@@ -53,6 +53,11 @@ Insight is configured as follows:
         }
     }
 
+## Example Dashboard
+
+![Insight Dashboard](http://www.ryangreenhall.com/wp-content/uploads/2010/06/insight-screenshot.png "insight dashboard")
+
+
 
 ## Getting Started
 
