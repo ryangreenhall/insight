@@ -73,7 +73,7 @@ The only dependency for starting Insight is nodejs which can be downloaded [here
 
 ### Latest Release
 
-Alternatively see Downloads to obtain a zip of the latest release.
+Alternatively see [downloads](http://github.com/ryangreenhall/insight/downloads) to obtain a zip of the latest release.
 
 
 
