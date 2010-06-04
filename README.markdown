@@ -62,7 +62,7 @@ Insight is configured as follows:
 
 ### Dependencies
 
-The only dependency for starting Insight is nodejs which can be downloaded [here](http://nodejs.org/#download)
+The only dependency for using Insight is nodejs which can be downloaded [here](http://nodejs.org/#download)
 
 ### From Source
 
