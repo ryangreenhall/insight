@@ -58,13 +58,22 @@ Insight is configured as follows:
 ![Insight Dashboard](http://www.ryangreenhall.com/wp-content/uploads/2010/06/insight-screenshot.png "insight dashboard")
 
 
-
 ## Getting Started
+
+### Dependencies
+
+The only dependency for starting Insight is nodejs which can be downloaded [here](http://nodejs.org/#download)
+
+### From Source
 
     1. git clone git@github.com:ryangreenhall/insight.git
     2. config the app in config/config.json
     3. sh insight
     4. Insight will be running on http://localhost:3000
+
+### Latest Release
+
+Alternatively see Downloads to obtain a zip of the latest release.
 
 
 
