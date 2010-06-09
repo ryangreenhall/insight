@@ -7,7 +7,7 @@ require "./scenarios/pages/homepage"
 describe "HomePage" do
 
     it "should list the environments" do
-        navigate(:to => :home).get_environments.should eql ["Staging", "Showcase", "Prod"]
+        navigate(:to => :home).environments.should eql ["Staging", "Showcase", "Prod"]
     end
 
     def application_pages

@@ -14,7 +14,7 @@ class HomePage
         return DashBoardPage.new(@browser)
     end
 
-    def get_environments
+    def environments
         links = @browser.links
 
         environments = []
