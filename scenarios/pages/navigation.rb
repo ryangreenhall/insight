@@ -1,7 +1,6 @@
 def application_pages
     pages = Hash.new()
     pages[:home] = HomePage.new
-    puts pages
     return pages
 end
 
