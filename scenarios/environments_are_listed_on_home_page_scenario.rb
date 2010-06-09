@@ -3,6 +3,7 @@ require "celerity"
 require "spec"
 
 require "./scenarios/pages/homepage"
+require "./scenarios/pages/navigation"
 
 describe "HomePage" do
 
@@ -10,18 +11,6 @@ describe "HomePage" do
         navigate(:to => :home).environments.should eql ["Staging", "Showcase", "Prod"]
     end
 
-    def application_pages
-        pages = Hash.new()
-        pages[:home] = HomePage.new
-        puts pages
-        return pages
-    end
-
-    def navigate(where_to)
-        page = application_pages()[where_to[:to]]
-        page.load
-        return page
-    end
 end
 
 
