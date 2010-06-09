@@ -7,9 +7,23 @@ require "./scenarios/pages/homepage"
 describe "HomePage" do
 
     it "should list the environments" do
-        homepage = HomePage.new
-        homepage.load
-        homepage.get_environments.should eql ["Staging", "Showcase", "Prod"]
+        navigate(:to => :home).get_environments.should eql ["Staging", "Showcase", "Prod"]
+    end
+
+    def application_pages
+        pages = Hash.new()
+        pages[:home] = HomePage.new
+        puts pages
+        return pages
+    end
+
+    def navigate(where_to)
+        page = application_pages()[where_to[:to]]
+        page.load
+        return page
     end
 end
+
+
+
 
