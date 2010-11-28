@@ -1,0 +1,24 @@
+.navigation
+  %ul.environments
+    :each item in config
+      :each name, value in item
+        %li{class:name===environment && 'current'}
+          %a{ href: '/status/' + name}=name
+
+.content
+  %h1= environment
+  
+  %table.monitoring
+    %tr
+      %th app.version
+      %th revision
+      %th server
+    %tr.even
+      %td 3.2      
+      %td 9246446082685cbb350f
+      %td http://go.sp-ask.com/status
+      
+    %tr
+      %td 3.1      
+      %td 9246446082685cbb350f
+      %td http://go.sp-ask.com/status
