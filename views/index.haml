@@ -1,0 +1,8 @@
+%h1 Welcome to Insight!
+.info
+  Insight will collate status information from applications in the following environments:
+:each item in config
+  %ul
+    :each name, value in item
+      %li
+        %a.environment{ href: '/status/' + name}=name
