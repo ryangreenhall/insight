@@ -1,2 +1,0 @@
-jruby -S rake $@
-
