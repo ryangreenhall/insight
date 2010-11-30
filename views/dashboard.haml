@@ -6,19 +6,16 @@
           %a{ href: '/status/' + name}=name
 
 .content
-  %h1= environment
-  
+  %h1= environment      
   %table.monitoring
     %tr
-      %th app.version
-      %th revision
-      %th server
-    %tr.even
-      %td 3.2      
-      %td 9246446082685cbb350f
-      %td http://go.sp-ask.com/status
+      :each propertyName in propertyNames
+        %th.propertyName= propertyName
       
-    %tr
-      %td 3.1      
-      %td 9246446082685cbb350f
-      %td http://go.sp-ask.com/status
+      :each status in states
+        %tr{class:(__key__ % 2) == 0 && 'even'}
+          :if (status.isUnavailable)
+            %td.deadServer{colspan:10}= 'Server is unavailable: ' +  status.server
+          :if (!status.isUnavailable)
+            :each property, value in status
+              %td= status[property].value || status.server

@@ -1,19 +1,19 @@
 {
     "environments": {
         "Staging": {
-            "urls":["http://localhost:8080/public/status.json",
-                    "http://localhost:8081/public/status.json",
-                    "http://localhost:8082/public/status.json"]
+            "urls":["http://localhost:8080/status.json",
+                    "http://localhost:8081/status.json",
+                    "http://localhost:8082/status.json"]
         },
         "Showcase": {
-            "urls":["http://localhost:8080/public/status.json",
-                    "http://localhost:8081/public/status.json",
-                    "http://localhost:8082/public/status.json"]
+            "urls":["http://localhost:8080/status.json",
+                    "http://localhost:8081/status.json",
+                    "http://localhost:8082/status.json"]
         },
         "Prod": {
-            "urls":["http://localhost:8080/public/status.json",
-                    "http://localhost:8081/public/status.json",
-                    "http://localhost:8086/public/status.json"]
+            "urls":["http://localhost:8080/status.json",
+                    "http://localhost:8081/status.json",
+                    "http://localhost:8086/status.json"]
         }
     }
 }
