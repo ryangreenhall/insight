@@ -58,6 +58,10 @@ th {
   margin-bottom: 10px;
 }
 
+td.deadServer {
+  color:red;
+}
+
 tr.even td {
   background: #EEEEE0;
 }
