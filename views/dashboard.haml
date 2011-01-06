@@ -11,7 +11,6 @@
     %tr
       :each propertyName in propertyNames
         %th.propertyName= propertyName
-      
       :each status in states
         %tr{class:(__key__ % 2) == 0 && 'even'}
           :if (status.isUnavailable)
