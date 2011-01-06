@@ -1,0 +1,1 @@
+/usr/local/Cellar/node/0.2.4/lib/node/.npm/haml/0.2.5/package/lib
