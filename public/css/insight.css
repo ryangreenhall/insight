@@ -10,7 +10,8 @@ a {
 
 .environments li {
     font-family: "arial";
-    background: #EEAD0E;
+    background: #EEAD0E;  
+    -moz-border-radius: 8px 8px;
     border-bottom-left-radius: 8px 8px;
     border-bottom-right-radius: 8px 8px;
     border-top-left-radius: 8px 8px;
@@ -42,7 +43,8 @@ div.content {
 
 table.monitoring {
   background: #FFFFF0;
-  width: 80%;
+  width: 100%;
+  -moz-border-radius: 8px 8px;
   border-bottom-left-radius: 8px 8px;
   border-bottom-right-radius: 8px 8px;
   border-top-left-radius: 8px 8px;
@@ -50,7 +52,7 @@ table.monitoring {
 }
 
 td {
-  font-size: 0.8em;
+  font-size: 1em;
 }
 
 th {

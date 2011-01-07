@@ -1,16 +1,16 @@
 {
     "environments": {
-        "Staging": {
+        "staging": {
             "urls":["http://localhost:8080/status.json",
                     "http://localhost:8081/status.json",
                     "http://localhost:8082/status.json"]
         },
-        "Showcase": {
+        "showcase": {
             "urls":["http://localhost:8080/status.json",
                     "http://localhost:8081/status.json",
                     "http://localhost:8082/status.json"]
         },
-        "Prod": {
+        "prod": {
             "urls":["http://localhost:8080/status.json",
                     "http://localhost:8081/status.json",
                     "http://localhost:8086/status.json"]
