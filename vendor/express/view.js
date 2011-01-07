@@ -10,7 +10,7 @@
  */
 
 var extname = require('path').extname
-  , utils = require('connect').utils
+  , utils = require('../connect').utils
   , http = require('http')
   , fs = require('fs')
   , mime = utils.mime;

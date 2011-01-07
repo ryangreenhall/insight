@@ -11,10 +11,10 @@
 
 var url = require('url')
   , view = require('./view')
-  , connect = require('connect')
+  , connect = require('../connect')
   , utils = connect.utils
   , queryString = require('querystring')
-  , router = require('connect/middleware/router');
+  , router = require('../connect/middleware/router');
 
 /**
  * Initialize a new `Server` with optional `middleware`.
