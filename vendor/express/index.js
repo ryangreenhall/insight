@@ -13,7 +13,7 @@
  * of `require('connect').logger()`.
  */
 
-var exports = module.exports = require('connect').middleware;
+var exports = module.exports = require('../connect').middleware;
 
 /**
  * Framework version.
