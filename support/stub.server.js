@@ -1,4 +1,4 @@
-var express = require('express');
+var express = require('../vendor/express');
 var fs = require('fs')
 
 var app = function(port) {
