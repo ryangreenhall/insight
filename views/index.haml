@@ -2,7 +2,8 @@
 .info
   Insight will collate status information from applications in the following environments:
 :each item in config
-  %ul
+  %ul.environments
     :each name, value in item
-      %li
+      %li.environments
         %a.environment{ href: '/status/' + name}=name
+        
