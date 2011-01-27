@@ -67,9 +67,11 @@ The only dependency for using Insight is nodejs which can be downloaded [here](h
 ### From Source
 
     1. git clone git@github.com:ryangreenhall/insight.git
-    2. config the app in config/config.json
-    3. sh insight
-    4. Insight will be running on http://localhost:3000
+    2. git co v2
+    3. config the app in config/config.json
+    4. node support/stub.server.js  (Provides several stub serves that expose property values)
+    5. node lib/insight.js 
+    6. Insight will be running on http://localhost:3000
 
 ### Latest Release
 
