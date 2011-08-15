@@ -3,17 +3,17 @@
         "staging": {
             "urls":["http://localhost:8080/status.json",
                     "http://localhost:8081/status.json",
-                    "http://localhost:8082/status.json"]
+                    "http://localhost:8082/status2.json"]
         },
         "showcase": {
             "urls":["http://localhost:8080/status.json",
                     "http://localhost:8081/status.json",
-                    "http://localhost:8082/status.json"]
+                    "http://localhost:8082/status2.json"]
         },
         "prod": {
             "urls":["http://localhost:8080/status.json",
                     "http://localhost:8081/status.json",
-                    "http://localhost:8086/status.json"]
+                    "http://localhost:8082/status2.json"]
         }
     }
 }

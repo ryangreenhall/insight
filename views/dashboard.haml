@@ -1,13 +1,16 @@
-.navigation
-  %ul.environments
-    :each item in config
-      :each name, value in item
-        %li{class:name===environment && 'current'}
-          %a{ href: '/status/' + name}=name
+%header
+  %h1 
+    Insight
+  .navigation
+    %ul.environments
+      :each item in config
+        :each name, value in item
+          %li{class:name===environment && 'current'}
+            %a{ href: '/status/' + name}=name
 
 .content
   %h1= environment      
-  %table.monitoring
+  %table.monitoring.sortable
     %tr
       :each propertyName in propertyNames
         %th.propertyName= propertyName

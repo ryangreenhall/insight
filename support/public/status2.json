@@ -1,6 +1,6 @@
 {
     "application.version" : {
-        "value": "1.0.3",
+        "value": "1.0.8",
         "type" : "property"
     },
 
@@ -10,27 +10,27 @@
     },
 
     "username" : {
-        "value": "user",
+        "value": "Alan",
         "type" : "property"
     },
 
     "end.point": {
-        "value": "http://end.point.i.need.to.talk.to",
+        "value": "http://end.point.i.need.to.talk.to.again",
         "type" : "integration"
     },
 
     "number.of.requests.in.last.hour": {
-        "value": "1678",
+        "value": "2078",
         "type" : "event"
     },
 
     "number.of.errors.in.last.hour": {
-        "value": "7",
+        "value": "8",
         "type" : "event"
     },
 
 	"lukes.custom.test":{
-		"value": "one billion",
+		"value": "two billion",
 		"type" : "property"
 	}
 }

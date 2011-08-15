@@ -53,11 +53,17 @@ table.monitoring {
 
 td {
   font-size: 1em;
+  padding: 5px;
+}
+
+table.sortable th {
+  cursor: pointer;
 }
 
 th {
   text-align: left;
   margin-bottom: 10px;
+  padding: 5px;
 }
 
 td.deadServer {

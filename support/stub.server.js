@@ -1,7 +1,7 @@
 var express = require('../vendor/express');
 var fs = require('fs')
 
-var app = function(port) {
+var app = function(port, status_path) {
   var that = {};
   
   var app = express.createServer();
@@ -21,3 +21,5 @@ var ports = [8080, 8081, 8082];
 ports.forEach(function(port) {
   app(port).start();
 })
+
+// 
