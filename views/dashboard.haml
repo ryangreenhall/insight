@@ -1,24 +1,16 @@
-%header
-  %h1 
-    Insight
-  .navigation
-    %ul.environments
-      :each item in config
-        :each name, value in item
-          %li{class:name===environment && 'current'}
-            %a{ href: '/status/' + name}=name
-
-.content
-  %h1= environment      
-  %table.monitoring.sortable
+%h2
+  ="Environment: #{environment}"      
+%table.monitoring.sortable
+  %thead
     %tr
       :each propertyName in propertyNames
         %th.propertyName= propertyName
-      :each status in states
-        %tr{class:(__key__ % 2) == 0 && 'even'}
-          :if (status.isUnavailable)
-            %td.deadServer{colspan:10}= 'Server is unavailable: ' +  status.server
-          :if (!status.isUnavailable)
-            :each property, value in status
-                %td= status[property].value
+  %tbody
+    :each status in states
+      %tr
+        :if (status.isUnavailable)
+          %td.deadServer{colspan:10}= 'Server is unavailable: ' +  status.server
+        :if (!status.isUnavailable)
+          :each property, value in status
+              %td= status[property].value
 

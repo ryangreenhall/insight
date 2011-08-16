@@ -1,12 +1,2 @@
-%header
-  %h1 Insight
-  .info
-    Welcome to Insight!
-    %br
-    Insight will collate status information from applications in the following environments:
-    :each item in config
-      %ul.environments
-      :each name, value in item
-        %li.environments
-          %a.environment{ href: '/status/' + name}=name
+%p Welcome to your Insight homepage. P lease select an environment from the choices above.
         

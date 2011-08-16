@@ -6,6 +6,21 @@
     %script{ src:'/javascript/sorttable.js'}
     %script{ src:'/javascript/app.js'}
   %body{onload: 'initJS()'}
-    = body
+    %header
+      %h1 
+        %a{href: "/"}= "Insight"
+        %small
+          Insight will collate status information from applications in the following environments:
+      %nav
+        %ul.environments
+          :each item in config
+            :each name, value in item
+              %li{class:name===environment && 'current'}
+                %a{ href: '/status/' + name}=name
+    .content
+      = body
+    %footer
+      Powered by Insight - 
+      %a{ href: "https://github.com/ryangreenhall/insight"}= "Github"
     
     
