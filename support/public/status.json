@@ -4,8 +4,8 @@
         "type" : "property"
     },
 
-    "svn.revision" : {
-        "value": "897",
+    "git.commit" : {
+        "value": "c7b43bdb9b92a763c8b8",
         "type" : "property"
     },
 

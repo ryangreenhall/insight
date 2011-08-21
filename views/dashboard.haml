@@ -9,7 +9,8 @@
     :each status in states
       %tr
         :if (status.isUnavailable)
-          %td.deadServer{colspan:10}= 'Server is unavailable: ' +  status.server
+          %td
+            .alert-message.error= 'Server is unavailable: ' +  status.server
         :if (!status.isUnavailable)
           :each property, value in status
               %td= status[property].value

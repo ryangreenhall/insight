@@ -1,7 +1,7 @@
 {
     "environments": {
         "staging": {
-            "urls":["http://localhost:8080/status.json",
+            "urls":["http://localhost:8086/statusf.json",
                     "http://localhost:8081/status.json",
                     "http://localhost:8082/status2.json"]
         },
