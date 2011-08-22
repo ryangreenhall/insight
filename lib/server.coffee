@@ -2,9 +2,11 @@ require("coffee-script")
 
 express = require('express')
 app = express.createServer()
+app.set 'view engine', 'jade'
 
 app.get '/', (req, res) ->
-  res.send("Welcome to insight")
+  res.render 'index', {layout: false}
+  res.end
  
 PORT = 3000
 app.listen(PORT)
