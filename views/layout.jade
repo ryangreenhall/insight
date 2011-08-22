@@ -1,0 +1,24 @@
+!!! 5
+html
+  head
+    title Insight
+    link(rel='stylesheet', href='http://twitter.github.com/bootstrap/assets/css/bootstrap-1.0.0.min.css')
+    link(rel='stylesheet', href='/css/insight.css')
+    script(src='/javascript/sorttable.js')
+    script(src='/javascript/app.js')
+  body(onload='initJS()')
+    header
+      h1 
+        a(href= "/")= "Insight"
+        small
+          Insight will collate status information from applications in the following environments:
+      nav
+        ul.environments
+
+    .content
+      =body
+    footer
+      Powered by Insight - 
+      a(href='https://github.com/ryangreenhall/insight')= "Github"
+    
+    
