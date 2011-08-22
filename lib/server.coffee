@@ -5,7 +5,7 @@ app = express.createServer()
 app.set 'view engine', 'jade'
 
 app.get '/', (req, res) ->
-  res.render 'index', {layout: false}
+  res.render 'index', {layout: true}
   res.end
  
 PORT = 3000
