@@ -14,11 +14,14 @@ html
           Insight will collate status information from applications in the following environments:
       nav
         ul.environments
+          - each environment in config
+            - each name, value in environment
+              li
+                a(href='/status/' + value)=value
 
     .content
       =body
-    footer
-      Powered by Insight - 
+    footer Powered by Insight - 
       a(href='https://github.com/ryangreenhall/insight')= "Github"
     
     
