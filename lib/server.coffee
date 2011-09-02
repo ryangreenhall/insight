@@ -19,6 +19,11 @@ EventBroker = ()->
 
 sys.inherits(EventBroker, events.EventEmitter);
 eventBroker = new EventBroker()
+
+eventBroker.addListener "status-retrieval-complete", (environment, states, request, config, propertyNames) ->
+  # res.render('index', {layout: false, servers: serversHealth})
+  res.send("This is the dashboard")
+  res.end
   
 app.get '/', (req, res) ->
   serversToWatch = config.load()
@@ -41,7 +46,7 @@ app.get '/status/:environment', (req, res) ->
   #     });
 
   aggregator.createStatusAggregator(config.load(), eventBroker, this).aggregate req.params.environment
-  res.send "Hello"
+  # res.send "Hello"
 
  
 PORT = 3000

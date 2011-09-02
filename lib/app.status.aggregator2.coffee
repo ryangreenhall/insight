@@ -17,7 +17,7 @@ class StatusAggregator
       status.server = {value: url}
       serverStates.push status
       
-      console.log "All of the servers have been pinged" if allServerStatesHaveBeenRetrieved()
+      @eventBroker.emit "status-retrieval-complete", environment, serverStates, @request, @config, [] if allServerStatesHaveBeenRetrieved()
       
       
     failure = (url) ->
