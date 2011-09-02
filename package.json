@@ -1,0 +1,17 @@
+{
+  "name": "Insight",
+  "description": "",
+  "version": "0.0.1",
+  "author": "Ryan Greenhall (@ryangreenhall)",
+  "engines": {
+    "node": ">= 0.4.0"
+  },
+  "dependencies": {
+    "jade": "0.14.2",
+    "express": "2.4.6",
+    "coffee-script": "1.1.1"
+    },
+    "bin": {
+      "insight": "bin/run"
+    }
+}
