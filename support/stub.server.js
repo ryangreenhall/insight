@@ -1,13 +1,13 @@
-var express = require('../vendor/express');
+var express = require('express');
 var fs = require('fs')
 
 var app = function(port, status_path) {
   var that = {};
   
-  var app = express.createServer();
+  var app = express();
 
   app.configure(function(){
-    app.use(express.staticProvider(__dirname + '/public'));
+    app.use(express.static(__dirname + '/public'));
   });
   
   that.start = function() {
