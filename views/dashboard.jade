@@ -7,5 +7,12 @@ block content
     thead
         tr
         each propertyName in propertyNames
-          th.propertyName= propertyName
-        
+          th.propertyName= propertyName   
+    tbody
+      each status in states
+        tr
+          if (status.isUnavailable)
+            td.alert-message.error= 'Server is unavailable: ' +  status.server
+          if (!status.isUnavailable)
+            each property, value in status
+                td= status[value].value
