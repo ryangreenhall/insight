@@ -57,8 +57,7 @@ app.get('/status/:environment', function(req, res) {
   statusAggregator.appStatusAggregator(config.load(), eventBroker, this).aggregate(req.params.environment);  
 });
 
-if (!module.parent) {
-  PORT = 3000;
-  app.listen(PORT);
-  console.log("Insight running on port %d", PORT);
-}
+
+PORT = 3000;
+app.listen(PORT);
+console.log("Insight running on port %d", PORT);

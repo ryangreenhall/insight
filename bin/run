@@ -2,5 +2,4 @@
 
 process.title = 'insight'
 
-require(__dirname + '/../node_modules/coffee-script');
-require(__dirname + '/../lib/server');
+require(__dirname + '/../app');
