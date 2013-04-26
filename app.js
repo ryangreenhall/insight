@@ -43,7 +43,6 @@ app.get('/', function(req, res){
 
 app.get('/status/:environment', function(req, res) {
   
-  console.log("in status route...");
   eventBroker.addListener("status-retrieval-complete", function(environment, states, request, config, propertyNames) {
     res.render('dashboard', {
       title: 'Dashboard',

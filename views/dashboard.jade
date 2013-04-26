@@ -1,4 +1,11 @@
 extends layout
 
 block content
-  This is the dashboard page
+
+  h2 Environment #{environment}
+  table.monitoring.sortable
+    thead
+        tr
+        each propertyName in propertyNames
+          th.propertyName= propertyName
+        
