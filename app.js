@@ -7,7 +7,7 @@ var express = require('express'),
 
 var app = module.exports = express();
 
-// Configuration
+var environments = config.load().environments;
 
 app.configure(function(){
   app.set('views', __dirname + '/views');
@@ -26,12 +26,11 @@ app.configure('production', function(){
   app.use(express.errorHandler()); 
 });
 
-// Routes
 
 app.get('/', function(req, res){
   res.render('index', {
     title: 'Insight',
-    config: config
+    environments: environments
   });
 });
 

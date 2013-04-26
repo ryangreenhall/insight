@@ -14,10 +14,9 @@ html
           Insight will collate status information from applications in the following environments:
       nav
         ul.environments
-          each item in config
-            each name, value in item
+            each val, key in environments
               li
-                a(href='/status/' + name)=name
+                a(href='/status/' + key)=key
           
     block content
     
