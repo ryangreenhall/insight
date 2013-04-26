@@ -21,5 +21,3 @@ var ports = [8080, 8081, 8082];
 ports.forEach(function(port) {
   app(port).start();
 })
-
-// 

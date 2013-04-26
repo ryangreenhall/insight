@@ -26,12 +26,36 @@ app.configure('production', function(){
   app.use(express.errorHandler()); 
 });
 
+function EventBroker() {
+  events.EventEmitter.call(this);
+}
+
+sys.inherits(EventBroker, events.EventEmitter);
+var eventBroker = new EventBroker();
+
 
 app.get('/', function(req, res){
   res.render('index', {
     title: 'Insight',
     environments: environments
   });
+});
+
+app.get('/status/:environment', function(req, res) {
+  
+  console.log("in status route...");
+  eventBroker.addListener("status-retrieval-complete", function(environment, states, request, config, propertyNames) {
+    res.render('dashboard', {
+      title: 'Dashboard',
+      environments: environments,
+      environment: environment,
+      config: config,
+      states: states,
+      propertyNames: propertyNames
+    });
+  });
+  
+  statusAggregator.appStatusAggregator(config.load(), eventBroker, this).aggregate(req.params.environment);  
 });
 
 if (!module.parent) {
