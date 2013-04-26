@@ -1,6 +1,6 @@
 {
   "name": "Insight",
-  "description": "",
+  "description": "Dashboard to expose the health and properties of applications running in production",
   "version": "0.0.1",
   "author": "Ryan Greenhall (@ryangreenhall)",
   "engines": {
