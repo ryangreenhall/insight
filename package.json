@@ -1,15 +1,15 @@
 {
-  "name": "Insight",
+  "name": "insight",
   "description": "Dashboard to expose the health and properties of applications running in production",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": "Ryan Greenhall (@ryangreenhall)",
   "engines": {
     "node": ">= 0.4.0"
   },
   "dependencies": {
     "jade": "0.30.0",
-    "express": "3.2.0"
-    },
+    "express": "3.2.0",
+    "optimist": "0.4.0"},
     "bin": {
       "insight": "bin/run"
     }

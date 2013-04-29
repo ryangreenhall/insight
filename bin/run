@@ -2,4 +2,10 @@
 
 process.title = 'insight'
 
-require(__dirname + '/../app');
+var argv = require('optimist').argv;
+
+var port = argv.port;
+var configPath = argv.configPath;
+
+var app = require(__dirname + '/../app');
+app.start(port, configPath);
