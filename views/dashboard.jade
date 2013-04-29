@@ -3,7 +3,7 @@ extends layout
 block content
 
   h2 Environment #{environment}
-  table.monitoring.sortable
+  table.monitoring.sortable.content
     thead
         tr
         each propertyName in propertyNames
@@ -12,7 +12,7 @@ block content
       each status in states
         tr
           if (status.isUnavailable)
-            td.alert-message.error= 'Server is unavailable: ' +  status.server
+            td.alert-message.error.deadServer= 'Server is unavailable: ' +  status.server
           if (!status.isUnavailable)
             each property, value in status
                 td= status[value].value
