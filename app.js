@@ -10,9 +10,7 @@ DEFAULT_CONFIG_PATH = "config/config.json";
 exports.start = function(port, configPath) {
   var thePort = port || 3000;
   var theConfigPath = configPath || DEFAULT_CONFIG_PATH;
-  
-  console.log("Insight running on port %d", thePort);
-  
+    
   var app = express();
 
   var environments = config.load(theConfigPath).environments;
@@ -65,6 +63,7 @@ exports.start = function(port, configPath) {
   });
   
   app.listen(thePort);
+  console.log("Insight running on port %d", thePort);
 };
 
 
