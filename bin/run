@@ -2,7 +2,9 @@
 
 process.title = 'insight'
 
-var argv = require('optimist').argv;
+var argv = require('optimist').usage('Usage: --port [num] --configPath [/full/path/to/config/config.json]')
+           .demand(['port', 'configPath'])
+           .argv;
 
 var port = argv.port;
 var configPath = argv.configPath;
