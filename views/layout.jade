@@ -14,8 +14,13 @@ html
       nav
         ul.environments
             each val, key in environments
-              li
-                a(href='/status/' + key)=key
+              
+              if(key == environment)
+                li.current
+                  a(href='/status/' + key)=key
+              else
+                li
+                  a(href='/status/' + key)=key
           
     block content
     
