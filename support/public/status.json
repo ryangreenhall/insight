@@ -1,36 +1,8 @@
 {
-    "application.version" : {
-        "value": "1.0.3",
-        "type" : "property"
-    },
-
-    "git.commit" : {
-        "value": "c7b43bdb9b92a763c8b8",
-        "type" : "property"
-    },
-
-    "username" : {
-        "value": "user",
-        "type" : "property"
-    },
-
-    "end.point": {
-        "value": "http://end.point.i.need.to.talk.to",
-        "type" : "integration"
-    },
-
-    "number.of.requests.in.last.hour": {
-        "value": "1678",
-        "type" : "event"
-    },
-
-    "number.of.errors.in.last.hour": {
-        "value": "7",
-        "type" : "event"
-    },
-
-	"lukes.custom.test":{
-		"value": "one billion",
-		"type" : "property"
-	}
+    "application-version" : "1.0.3",
+    "git-commit" : "c7b43bdb9b92a763c8b8",
+    "username" :  "user",
+    "last-deployed": "16th Feb, 10:45am"
 }
+
+

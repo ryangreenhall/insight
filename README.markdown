@@ -4,36 +4,19 @@ Provides a dashboard that collates information from multiple deployed web applic
 view.  Insight relies on web applications exposing their configuration properties as a resource, which provides
 status information as JSON.
 
-## JSON format
-
-Insight supports three types of properties:
-
-*   Property - a simple configuration property;
-*   Integration Point - a property that configures an external dependency;
-*   Event - values that correspond to events that are of interest, e.g number of errors in the last hour.
-
 ###Example
 
 A request to http://mywebapp:8080/internal/status.json
 
 could respond with a collection of properties:
 
-    {
-        "username" : {
-            "value": "user",
-            "type" : "property"
-        },
-
-        "end.point": {
-            "value" : "http://end.point.i.need.to.talk.to",
-            "type" : "integration"
-        },
-
-        "number.of.requests.in.last.hour": {
-            "value": "1678",
-            "type" : "event"
-        }
-    }
+  {
+      "application-version" : "1.0.3",
+      "git-commit" : "c7b43bdb9b92a763c8b8",
+      "username" :  "user",
+      "last-deployed": "16th Feb, 10:45am"
+  }
+  
 
 ##Configuration
 
