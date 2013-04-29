@@ -1,0 +1,1 @@
+./bin/run --port 3000 --configPath ./config/config.json
