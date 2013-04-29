@@ -9,13 +9,14 @@ DEFAULT_CONFIG_PATH = "config/config.json";
 
 exports.start = function(port, configPath) {
   var thePort = port || 3000;
+  var theConfigPath = configPath || DEFAULT_CONFIG_PATH;
   
   console.log("Insight running on port %d", thePort);
   
   var app = express();
 
-  var environments = config.load().environments;
-
+  var environments = config.load(theConfigPath).environments;
+  
   app.configure(function(){
     app.set('views', __dirname + '/views');
     app.set('view engine', 'jade');
@@ -40,7 +41,6 @@ exports.start = function(port, configPath) {
   sys.inherits(EventBroker, events.EventEmitter);
   var eventBroker = new EventBroker();
 
-
   app.get('/', function(req, res){
     res.render('index', {
       title: 'Insight',
@@ -61,7 +61,7 @@ exports.start = function(port, configPath) {
       });
     });
 
-    statusAggregator.appStatusAggregator(config.load(), eventBroker, this).aggregate(req.params.environment);  
+    statusAggregator.appStatusAggregator(config.load(theConfigPath), eventBroker, this).aggregate(req.params.environment);  
   });
   
   app.listen(thePort);
