@@ -42,7 +42,8 @@ exports.start = function(port, configPath) {
   app.get('/', function(req, res){
     res.render('index', {
       title: 'Insight',
-      environments: environments
+      environments: environments,
+      environment: ""
     });
   });
 
