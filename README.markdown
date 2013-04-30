@@ -47,13 +47,10 @@ Insight is configured as follows:
 
 The only dependency for using Insight is nodejs which can be downloaded [here](http://nodejs.org/#download)
 
-### From Source
-
-    1. git clone git@github.com:ryangreenhall/insight.git
-    2. config the app in config/config.json
-    3. node support/stub.server.js  (Provides several stub servers that expose property values)
-    4. node lib/insight.js 
-    5. Insight will be running on http://localhost:3000
+### Installation
+    1. npm install -g insight-dashboard
+    2. insight-dashboard --port 3000 --configPath /full/path/to/config.json 
+    3. Insight will be running on http://localhost:3000
 
 
 
