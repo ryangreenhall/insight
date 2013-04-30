@@ -25,13 +25,13 @@ Insight is configured as follows:
     {
         "environments": {
             "Staging": {
-                "urls":["a", "b"]
+                "urls":["http://localhost:8081/status.json", "http://localhost:8081/status.json"]
             },
             "Showcase": {
-                "urls":["c", "d"]
+                "urls":["http://localhost:8081/status.json", "http://localhost:8081/status.json"]
             },
             "Prod": {
-                "urls":["e", "f"]
+                "urls":["http://localhost:8081/status.json", "http://localhost:8081/status.json"]
             }
         }
     }
