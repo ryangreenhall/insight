@@ -7,9 +7,10 @@
     "node": ">= 0.4.0"
   },
   "dependencies": {
-    "jade": "0.30.0",
-    "express": "3.2.0",
-    "optimist": "0.4.0"
+    "jade"    : "0.30.0",
+    "express" : "3.2.0",
+    "optimist": "0.4.0",
+    "needle"  :"0.4.8"
     },
     "bin": {
       "insight-dashboard": "bin/run"
